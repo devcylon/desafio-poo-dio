@@ -20,6 +20,7 @@ public class Dev {
         if(conteudo.isPresent()){
             this.conteudosConcluidos.add(conteudo.get());
             this.conteudosInscritos.remove(conteudo.get());
+        }
         else{
             System.out.println("Você não está matriculado em nenhum conteúdo");
         }
@@ -28,7 +29,10 @@ public class Dev {
 
     public double calcularTotalXp(){
 
-        return this.conteudosConcluidos.stream().mapToDouble(Conteudo::calcularXp).sum();
+        return this.conteudosConcluidos
+        .stream()
+        .mapToDouble(Conteudo::calcularXp)
+        .sum();
 
     }
 
